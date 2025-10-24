@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import ProductList from './Components/Prodectlist';
 import ProductForm from './Components/Addprs';
 import CustomerOrderList from './Components/Order';
-import LoginPage from './Components/login';
+import LoginPage from './Components/Login';
 import Sidebar from './Components/SideBar';
 
 import './App.css'; 
