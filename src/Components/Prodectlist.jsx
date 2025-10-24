@@ -25,7 +25,7 @@ const ProductList = () => {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const res = await axios.get('http://localhost:3019/api/auth/getall');
+      const res = await axios.get('https://furniture-backend-yvpo.onrender.com/api/auth/getall');
       setProducts(res.data.products || []);
     } catch (err) {
       console.error('Error fetching products:', err);
@@ -80,7 +80,7 @@ const ProductList = () => {
   const handleDelete = async (productId) => {
     if (!window.confirm('Are you sure you want to delete this product?')) return;
     try {
-      await axios.delete(`http://localhost:3019/api/auth/deleteproduct/${productId}`);
+      await axios.delete(`https://furniture-backend-yvpo.onrender.com/api/auth/deleteproduct/${productId}`);
       // Refresh products list
       fetchProducts();
     } catch (err) {
@@ -183,7 +183,7 @@ const ProductList = () => {
                             style={{ width: '60px', height: '60px', overflow: 'hidden' }}
                           >
                             <img
-                              src={`http://localhost:3019${product.image}`}
+                              src={`https://furniture-backend-yvpo.onrender.com${product.image}`}
                               alt={product.name}
                               className="img-fluid"
                               style={{ objectFit: 'cover', width: '100%', height: '100%' }}

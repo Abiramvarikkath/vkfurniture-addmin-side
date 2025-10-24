@@ -25,7 +25,7 @@ const Category = () => {
   const fetchCategories = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:3019/api/auth/getcategory");
+      const res = await fetch("https://furniture-backend-yvpo.onrender.com/api/auth/getcategory");
       const data = await res.json();
       setCategories(data);
     } catch (err) {
@@ -71,8 +71,8 @@ const Category = () => {
     e.preventDefault();
     const method = editingCategory ? "PUT" : "POST";
     const url = editingCategory
-      ? `http://localhost:3019/api/auth/category/${editingCategory._id}`
-      : "http://localhost:3019/api/auth/addcategory";
+      ? `https://furniture-backend-yvpo.onrender.com/api/auth/category/${editingCategory._id}`
+      : "https://furniture-backend-yvpo.onrender.com/api/auth/addcategory";
 
     try {
       const res = await fetch(url, {
@@ -97,7 +97,7 @@ const Category = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this category?")) return;
     try {
-      const res = await fetch(`http://localhost:3019/api/auth/category/${id}`, {
+      const res = await fetch(`https://furniture-backend-yvpo.onrender.com/api/auth/category/${id}`, {
         method: "DELETE",
       });
       if (res.ok) fetchCategories();

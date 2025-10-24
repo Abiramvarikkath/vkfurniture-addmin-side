@@ -5,13 +5,15 @@ import axios from 'axios';
 const ProductModal = ({ show, handleClose, productId }) => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(false);
+
+
   const [error, setError] = useState('');
 
   useEffect(() => {
     if (productId) {
       setLoading(true);
       axios
-        .get(`http://localhost:3019/api/auth/product/${productId}`)
+        .get(`https://furniture-backend-yvpo.onrender.com/api/auth/product/${productId}`)
         .then((res) => {
           setProduct(res.data.product);
           setLoading(false);
@@ -39,7 +41,7 @@ const ProductModal = ({ show, handleClose, productId }) => {
           <div className="d-flex flex-wrap gap-3">
             <div style={{ flex: '1 1 300px', maxWidth: '300px' }}>
               <img
-                src={`http://localhost:3019${product.image}`}
+                src={`https://furniture-backend-yvpo.onrender.com${product.image}`}
                 alt={product.name}
                 className="img-fluid rounded"
               />

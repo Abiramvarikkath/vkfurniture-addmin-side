@@ -31,7 +31,7 @@ const ProductForm = () => {
 
   // ✅ Fetch categories
   useEffect(() => {
-    axios.get('http://localhost:3019/api/auth/getcategory')
+    axios.get('https://furniture-backend-yvpo.onrender.com/api/auth/getcategory')
       .then(res => setCategories(res.data))
       .catch(err => console.error('Failed to fetch categories', err));
   }, []);
@@ -39,7 +39,7 @@ const ProductForm = () => {
   // ✅ Fetch product if editing
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:3019/api/auth/product/${id}`)
+      axios.get(`https://furniture-backend-yvpo.onrender.com/api/auth/product/${id}`)
         .then(res => {
           const product = res.data.product;
           setFormData({
@@ -50,7 +50,7 @@ const ProductForm = () => {
             stock: product.stock,
             image: null
           });
-          setImagePreview(product.image ? `http://localhost:3019${product.image}` : null);
+          setImagePreview(product.image ? `https://furniture-backend-yvpo.onrender.com${product.image}` : null);
         })
         .catch(err => setError('Failed to fetch product'));
     }
@@ -80,8 +80,8 @@ const ProductForm = () => {
 
     try {
       const url = id
-        ? `http://localhost:3019/api/auth/updateproduct/${id}`
-        : 'http://localhost:3019/api/auth/add';
+        ? `https://furniture-backend-yvpo.onrender.com/api/auth/updateproduct/${id}`
+        : 'https://furniture-backend-yvpo.onrender.com/api/auth/add';
       const method = id ? 'put' : 'post';
 
       const res = await axios({ method, url, data, headers: { 'Content-Type': 'multipart/form-data' } });

@@ -27,7 +27,7 @@ const [expandedOrder, setExpandedOrder] = useState(null);
     const fetchOrders = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3019/api/auth/getallorder"
+          "https://furniture-backend-yvpo.onrender.com/api/auth/getallorder"
         ); // adjust URL
         setOrders(response.data.orders);
       } catch (err) {
@@ -108,7 +108,7 @@ const [expandedOrder, setExpandedOrder] = useState(null);
 
     // Send API request
     const res = await axios.put(
-      `http://localhost:3019/api/auth/updateorderstatus/${orderId}`,
+      `https://furniture-backend-yvpo.onrender.com/api/auth/updateorderstatus/${orderId}`,
       { status: newStatus }
     );
 
