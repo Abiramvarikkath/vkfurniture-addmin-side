@@ -1,0 +1,76 @@
+/* LoginPage.css */
+
+.bg-beige {
+  background-color: #f9f4ed !important;
+}
+
+.text-brown {
+  color: #5c3a21 !important;
+}
+
+.login-card {
+  border: none;
+  border-radius: 8px;
+}
+
+.btn-brown {
+  background-color: #d4a373;
+  border-color: #d4a373;
+  color: white;
+}
+
+.btn-brown:hover {
+  background-color: #c09265;
+  border-color: #c09265;
+}
+
+.btn-outline-brown {
+  color: #5c3a21;
+  border-color: #d4a373;
+}
+
+.btn-outline-brown:hover {
+  background-color: #f9f4ed;
+  border-color: #c09265;
+}
+
+/* Divider "Or" */
+.my-3.position-relative::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #e0e0e0;
+  z-index: -1;
+}
+
+/* Make inputs look cleaner */
+.form-control {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 2px rgba(212, 163, 115, 0.2);
+  border-color: #d4a373;
+}
+
+/* Label styling */
+.form-label {
+  font-weight: 500;
+  color: #5c3a21;
+}
+
+/* Checkbox color */
+.form-check-input:checked {
+  background-color: #d4a373;
+  border-color: #d4a373;
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 2px rgba(212, 163, 115, 0.2);
+}
